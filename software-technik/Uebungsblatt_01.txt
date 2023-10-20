@@ -27,3 +27,8 @@ Nachteil: Späte Tests lassen Fehler ggf. erst zu Ende der Softwareentwlicklung 
 3b
 Das Open-Closed-Prinzip, nach welchem Softwareklassen offen für Erweiterung aber geschlossen gegenüber Modifikationen sein sollen gewährleistet, dass bereits fertiger Code nicht im Nachhinein fehlerhaft wird. Die Veränderung bereits existierender und implementierter Klassen gefährdet die Funktionalität anderer Softwareteile. Um dies zu verhindern, werden Konzepte wie Vererbung oder Interfaces genutzt, wodurch einer Anwendung neue Funktionen hinzugefügt werden können, ohne existierenden Code zu gefährden. Dies ist essenziell für einen strukturierten Entwicklungsprozess, insbesondere in größeren Maßstäben. Arbeiten mehrere Personen an einem Programm, würde die Änderung von viel genutzten Funktionen die vorhandenen Implementierungen dieser gefährden, ohne das Ursachenbewusstsein des nun vorhandenen Fehlers zu gewährleisten.
 Das Interface-Segregation-Prinzip fordert von einen Client keine Abhängigkeiten eines Servers zu besitzen, dessen Funktion nicht im Client benötigt wird. Sind mehrere, nicht eng zusammenhängende Funktionen zusammengefasst, ist eine vollständige Implementierung des Interfaces notwendig - selbst wenn ein Großteil dieses vollkommen irrelevant für das angestrebte Ziel ist. Das Interface-Segregation-Prinzip verhindert die Entstehung unnötiger Kosten durch Arbeitsaufwand und Betriebskosten.
+
+
+Quellen:
+(1) 'https://www.ionos.de/digitalguide/websites/web-entwicklung/wasserfallmodell/'
+(2) 'https://www.microconsult.de/blog/2019/05/fl_solid-prinzipien/'
