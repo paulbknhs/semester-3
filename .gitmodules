@@ -1,0 +1,3 @@
+[submodule "gbs/gbs_a1"]
+	path = gbs/gbs_a1
+	url = ssh://pau.bakenhus@gbs.sra.uni-hannover.de:/gbs/repos/a1/joh.lehmann
