@@ -1,0 +1,29 @@
+2a
+- stellt optimierte Arbeitsweise für Programmentwicklung dar
+- soll schrittweisen und gut geplanten Ablauf gewährleisten (Systematisch arbeiten)
+- bestehend aus 7 Stufen:
+	1. system requirements (notwendige Hardware)
+	2. software requirements (notwendige Software, bildet mit [1] die 'Ist-Analyse' und das 'Soll-Konzept'¹)
+	3. analysis (Zerlegen von Zielen und Problemen in kleinere Teilaufgaben zur Entwicklung von Strategien¹)
+	4. program design (Software-Architektur ermitteln, software-blueprint entwickeln und Entwurfsdokument erstellen¹)
+	5. coding (Umsetzung von [4] in Programmiersprache, seperate Entwicklung von Teilsoftware, schrittweise Integration in Projekt¹)
+	6. testing (vollständiges Produkt erstmals in Gesamtheit testen, Beta-Tests zur Prüfung der Anforderungserfüllung¹)
+	7. operations (erfolgreiche Tests als Voraussetzung, Freigabe für Betrieb, ggf. Wartung und Verbesserung¹)
+- Pfeile stellen Rücksprünge dar:
+	- schrittweiser Rücksprung falls vorheriger Schritt unvollständig oder fehlerhaft (z.B. fehlgeschlagene Testphase)
+	- Rücksprünge über mehrere Stufen bei tiefersitzenden Problemen (z.B. fehlerhafte Analyse oder Änderung der Voraussetzungen im Nachhinein)
+
+2b
+Vorteil: Kosten- und Aufwandsabschätzungen bereits zu Beginn möglich¹
+Nachteil: Späte Tests lassen Fehler ggf. erst zu Ende der Softwareentwlicklung aufzeigen¹
+
+3a⁽²⁾
+1. Single-Responsibility-Prinzip
+2. Open-Closed-Prinzip
+3. Liskovsches Substitutionsprinzip
+4. Interface-Segregation-Prinzip
+5. Dependency-Inversion-Prinzip
+
+3b
+Das Open-Closed-Prinzip, nach welchem Softwareklassen offen für Erweiterung aber geschlossen gegenüber Modifikationen sein sollen gewährleistet, dass bereits fertiger Code nicht im Nachhinein fehlerhaft wird. Die Veränderung bereits existierender und implementierter Klassen gefährdet die Funktionalität anderer Softwareteile. Um dies zu verhindern, werden Konzepte wie Vererbung oder Interfaces genutzt, wodurch einer Anwendung neue Funktionen hinzugefügt werden können, ohne existierenden Code zu gefährden. Dies ist essenziell für einen strukturierten Entwicklungsprozess, insbesondere in größeren Maßstäben. Arbeiten mehrere Personen an einem Programm, würde die Änderung von viel genutzten Funktionen die vorhandenen Implementierungen dieser gefährden, ohne das Ursachenbewusstsein des nun vorhandenen Fehlers zu gewährleisten.
+Das Interface-Segregation-Prinzip fordert von einen Client keine Abhängigkeiten eines Servers zu besitzen, dessen Funktion nicht im Client benötigt wird. Sind mehrere, nicht eng zusammenhängende Funktionen zusammengefasst, ist eine vollständige Implementierung des Interfaces notwendig - selbst wenn ein Großteil dieses vollkommen irrelevant für das angestrebte Ziel ist. Das Interface-Segregation-Prinzip verhindert die Entstehung unnötiger Kosten durch Arbeitsaufwand und Betriebskosten.
