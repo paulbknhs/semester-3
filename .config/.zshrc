@@ -17,7 +17,7 @@ function br { brew install $1 }
 function uz { unzip $1 && rm -f $1 }
 function mkrun { make && ./$1 }
 function scanlocal() {                                                                             
-     local ip_full=$(ip -4 addr show wlp2s0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+
      local ip=${ip_full%.*}
 	 ip="${ip}.0/24"
      local date=$(date +%Y%m%d)                                                                     
