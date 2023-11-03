@@ -32,7 +32,11 @@ alias e="eza --long --header --icons --git"
 alias win="cd /mnt/c/Users/Paul/"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-
+alias vim="nvim"
 alias ls="eza --icons"
 alias ll="eza --long --header --icons"
 alias la="eza --long --header --icons --all"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
