@@ -1,0 +1,38 @@
+export PATH=/home/paul/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/home/paul/.local/bin:/snap/bin
+  export ZSH=/home/paul/.oh-my-zsh
+export PKG_CONFIG_PATH=/usr/bin/pkg-config
+
+#OH-MY-ZSH CONFIG
+ZSH_THEME=agnoster
+plugins=(git python)
+
+source /home/paul/.oh-my-zsh/oh-my-zsh.sh
+source ~/.oh-my-zsh/custom/antigen.zsh
+source ~/.oh-my-zsh/custom/plugins/functions.zsh
+
+autoload -Uz compinit
+compinit
+
+antigen use oh-my-zsh
+antigen bundles <<EOBUNDLES
+	git
+	pip
+	lein
+	heroku
+	# autojump
+	command-not-found
+    	zsh-users/zsh-completions
+	zsh-users/zsh-autosuggestions
+    	zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+antigen apply
+
+alias dev_ip="192.168.178.1/24"
+alias e="eza --long --header --icons --git"
+alias win="cd /mnt/c/Users/Paul/"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+
+alias ls="eza --icons"
+alias ll="eza --long --header --icons"
+alias la="eza --icons"
