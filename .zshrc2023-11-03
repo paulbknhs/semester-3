@@ -35,4 +35,4 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias ls="eza --icons"
 alias ll="eza --long --header --icons"
-alias la="eza --icons"
+alias la="eza --long --header --icons --all"
