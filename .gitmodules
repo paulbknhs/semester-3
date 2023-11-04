@@ -4,3 +4,6 @@
 [submodule "betriebssysteme/gbs_a2"]
 	path = betriebssysteme/gbs_a2
 	url = ssh://pau.bakenhus@gbs.sra.uni-hannover.de:/gbs/repos/a2/joh.lehmann
+[submodule "neovim-init.vim"]
+	path = neovim-init.vim
+	url = https://github.com/Optixal/neovim-init.vim.git
