@@ -1,0 +1,193 @@
+\documentclass[a4paper,12pt]{scrartcl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bitte zuerst diese Variablen setzen!
+%
+\def\Nr{1}					%Hier die Nummer des Übungsblatts eintragen
+\def\NameA{Alice Müller}	%Hier den Name eintragen
+\def\MatA{1234567}			%Hier die Matrikelnummer eintragen
+\def\NameB{Bob Meier}		%Hier den Name des 2. Gruppenmitglieds eintragen
+\def\MatB{765421}			%Hier die Matrikelnummer des 2. Gruppenmitglieds eintragen
+\def\NameC{}				%Name 3. Gruppenmitglied
+\def\MatC{}					%Matrikelnummer 3. Gruppenmitglied
+\def\NameD{}				%Name 4. Gruppenmitglied
+\def\MatD{}					%Matrikelnummer 4. Gruppenmitglied
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{ifthen}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{algorithm}
+\usepackage{xcolor}
+\setlength{\marginparwidth}{2.5cm}
+\usepackage{todonotes}
+\usepackage{tikz}
+\usepackage{forest}
+\usetikzlibrary{
+	arrows,
+	arrows.meta,
+	automata,
+	calc,
+	chains,
+	trees,
+	positioning,
+	scopes,
+	decorations.pathmorphing,
+	shapes,
+	backgrounds,
+	chains,
+	}
+
+\geometry{margin=3cm, top=2.7cm}
+\renewcommand{\thesection}{\arabic{section}{.}}
+
+\begin{document}
+\begin{center}
+	\sffamily
+	\bfseries
+	\LARGE
+	Datenstrukturen und Algorithmen\\
+	\Large
+	\vspace{.2\parskip}
+	Hausübung \Nr\\
+	\normalsize\normalfont
+	WiSe 23/24
+	\vspace{.2\parskip}
+\end{center}
+
+\begin{tabular}[t]{p{4.5cm} p{3cm}}
+	\toprule
+	Name & Matrikelnummer\\
+	\midrule
+	\NameA & \MatA\\
+	\NameB & \MatB\\
+	\ifx\NameC\empty\else\NameC & \MatC\\\fi
+	\ifx\NameD\empty\else\NameD & \MatD\\\fi
+	\bottomrule
+\end{tabular}
+\hfill
+\begin{tabular}[t]{ccccc}
+	\toprule
+	A1 & A2 & A3 & Bonus & $\Sigma$ \\
+	\midrule
+	\\
+	\bottomrule	
+\end{tabular}
+\hfill\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ab hier bearbeiten 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Informationen zu \LaTeX{} auf z.B.: \url{https://tex.cloud.uni-hannover.de/learn}.
+
+\section*{Aufgabe 1}
+\begin{enumerate}[a)]
+	\item $f \ll g \ll h$ % inline mathmode
+	\begin{enumerate}[1.]
+		\item $f_1(n) = 42n + 17 + 120n^2 + 23n^3$
+		\item $f_2(n) = 4^{1 + \log(n^2)} + 2^{4 \cdot \log(2^n)}$
+		\item $f_3(n) = \left(\sqrt{3n} + \sqrt{12n}\right) \cdot \left(-\sqrt{3n} + \sqrt{12n}\right)$
+		\item $f_4(n) = \log(9n^2) + \log(2n^5)$
+		\item $f_5(n) = \frac{6n^2-18n-10}{(2n+1)(n-5)}$
+		\item $f_6(n) = \log\left(\sqrt{2 \pi n}\left(\frac{n}{e}\right)^{\!n}\right)$
+	\end{enumerate}
+	% display-math mode
+	$$
+		\lim_{n \to \infty} \frac{a}{b} = c
+	$$
+	% Wenn eine Gleichung zu breit für eine Zeile ist, kann sie mit multline auf mehrere Zeilen verteilt werden.
+	\begin{multline*}
+		(123,456,731,479,871,357 + 123,489,741,971,731) \cdot (1,324,713 + 474,313) \\
+		= 123,580,221,221,843,088 \cdot 1,799,026 \\
+		= 222,324,031,063,847,483,232,288
+	\end{multline*}
+	% Alternativ bietet sich auch die align Umgebung an, die das &-Zeichen zum anordnen verwendet 
+	\begin{align*}
+		(a + b)^2 
+		&= (a + b)(a + b) \\
+		&= a^2 + ba + ab + b^2 \\
+		&= a^2 + 2ab + b^2
+	\end{align*}
+	\item \textbf{Satz 1.22} Seien $f, g$ Funktionen. Falls $g \in O(f)$, dann folgt $f + g \in \Theta(f)$.
+\end{enumerate}
+
+
+\section*{Aufgabe 2}
+\begin{enumerate}[a)]
+	\item
+	Graphen können mit dem Tikz-Paket erstellt werden\\
+	\url{https://tex.cloud.uni-hannover.de/learn/latex/TikZ_package}\\
+	\url{https://tobiw.de/tbdm/tikz-adventskalender}
+	\begin{center}
+	\begin{tikzpicture}
+		\node[draw, circle] (0) {0};
+		\node[draw, circle, right = of 0] (1) {1};
+		\node[draw, circle, right = of 1] (2) {2};
+		\node[draw, circle, below = of 0] (3) {3};
+		\node[draw, circle, right = of 3] (4) {4};
+		\node[draw, circle, right = of 4] (5) {5};
+		\draw[-Stealth] (0) -- (1);
+		\draw[-Stealth] (0) -- (3);
+		\draw[-Stealth] (1) -- (5);
+		\draw[-Stealth] (5) -- (2);
+		\draw[-Stealth] (4) -- (1);
+		\draw[-Stealth] (3) -- (1);
+		\draw[-Stealth] (4) -- (0);
+		\draw[-Stealth] (5) -- (4);
+		\draw[-Stealth] (2) to[bend left] (5);
+		\draw[-Stealth] (3) to[bend right] (5);
+	\end{tikzpicture}
+	\end{center}
+	\item
+	\item
+\end{enumerate}
+
+
+\section*{Aufgabe 3}
+\begin{enumerate}[a)]
+	\item \
+	\begin{center}
+	\begin{tikzpicture}[baseline=(0.center)]
+		\node[draw, circle, fill=blue!33!white] (0) {0};
+		\node[draw, circle, right = of 0] (1) {1};
+		\node[draw, circle, right = of 1] (2) {2};
+		\node[draw, circle, below = of 0] (3) {3};
+		\node[draw, circle, right = of 3] (4) {4};
+		\node[draw, circle, right = of 4] (5) {5};
+		\draw[-] (0) -- (1);
+		\draw[-] (0) -- (5);
+		\draw[-] (1) -- (2);
+		\draw[-] (1) -- (3);
+		\draw[-] (2) -- (4);
+		\draw[-] (3) -- (4);
+		\draw[-] (3) to[bend right] (5);
+	\end{tikzpicture}
+	\qquad\qquad
+	\begin{tikzpicture}[baseline=(0.center)]
+		\node[draw, circle, fill=red!33!white] (0) {0};
+		\node[draw, circle, right = of 0] (1) {1};
+		\node[draw, circle, right = of 1] (2) {2};
+		\node[draw, circle, below = of 0] (3) {3};
+		\node[draw, circle, right = of 3] (4) {4};
+		\node[draw, circle, right = of 4] (5) {5};
+		\draw[-] (0) -- (3);
+		\draw[-] (4) -- (1);
+		\draw[-] (5) -- (4);
+		\draw[-] (1) -- (2);
+		\draw[-] (5) -- (2);
+		\draw[-] (0) -- (1);
+		\draw[-] (3) to[bend right] (5);
+	\end{tikzpicture}
+	\end{center}
+	\item
+	\item
+\end{enumerate}
+\end{document}
