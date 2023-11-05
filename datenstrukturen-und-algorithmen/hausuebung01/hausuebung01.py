@@ -4,7 +4,7 @@ from collections import deque
 # Hier bitte den Namen und die Matrikelnummer *aller* Gruppenmitglieder eintrage:
 # | Name                          | Matrikelnummer
 # ---------------------------------------------------------
-# |                               | 
+# | Paul Bakenhus                 | 
 # |                               | 
 # |                               | 
 # |                               | 
